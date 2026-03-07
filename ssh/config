@@ -1,0 +1,21 @@
+Host asc-server
+    HostName 202.201.1.198
+    Port 28497
+    User root
+    IdentityFile ~/.ssh/id_rsa
+Host hpc1
+    HostName 202.201.1.198
+    Port 28238
+    User root
+    IdentityFile ~/.ssh/id_rsa
+
+Host hpc2
+    HostName 202.201.1.198
+    Port 28239
+    User root
+    IdentityFile ~/.ssh/id_rsa
+Host github.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_rsa
+    AddKeysToAgent yes      
