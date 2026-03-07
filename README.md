@@ -28,7 +28,7 @@ dotfiles/
 ### 方法1：使用安装脚本
 ```bash
 # 克隆仓库
-git clone https://github.com/你的用户名/dotfiles.git ~/dotfiles
+git clone git@github.com:lexiaox/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 
 # 运行安装脚本
