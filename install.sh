@@ -74,8 +74,7 @@ install_dotfiles() {
     log_info "安装 Shell 配置..."
     create_symlink "$DOTFILES_DIR/.profile" "$HOME/.profile"
     create_symlink "$DOTFILES_DIR/zsh/.zshrc" "$HOME/.zshrc"
-    create_symlink "$DOTFILES_DIR/zsh/.p10k.zsh" "$HOME/.p10k.zsh"
-    
+
     # 2. Neovim 配置
     log_info "安装 Neovim 配置..."
     create_symlink "$DOTFILES_DIR/nvim/init.vim" "$HOME/.config/nvim/init.vim"
@@ -110,11 +109,8 @@ install_dotfiles() {
     echo "2. Neovim 插件安装："
     echo "   nvim +PlugInstall +qall"
     echo ""
-    echo "3. Powerlevel10k 配置："
-    echo "   p10k configure"
-    echo ""
-    echo "4. 检查 SSH 密钥："
-    echo "   确保 ~/.ssh/id_rsa 存在"
+    echo "3. 检查 SSH 密钥："
+    echo "   确保 ~/.ssh 中存在可用私钥"
     echo "==========================================="
 }
 
@@ -125,7 +121,6 @@ uninstall_dotfiles() {
     # 删除符号链接
     rm -f "$HOME/.profile"
     rm -f "$HOME/.zshrc"
-    rm -f "$HOME/.p10k.zsh"
     rm -f "$HOME/.config/nvim/init.vim"
     rm -f "$HOME/.ssh/config"
     rm -f "$HOME/.gitconfig"

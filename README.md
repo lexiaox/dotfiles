@@ -10,9 +10,7 @@ dotfiles/
 ├── install.sh         # 安装脚本
 ├── .profile           # Shell 环境配置
 ├── zsh/               # Zsh 配置
-│   ├── .zshrc         # 主配置文件
-│   ├── .p10k.zsh      # Powerlevel10k 主题配置
-│   └── .zshrc.pre-oh-my-zsh # Oh My Zsh 原始配置
+│   └── .zshrc         # 主配置文件
 ├── nvim/              # Neovim 配置
 │   └── init.vim       # Neovim 配置文件
 ├── ssh/               # SSH 配置
@@ -41,7 +39,6 @@ chmod +x install.sh
 # 创建符号链接
 ln -sf ~/dotfiles/.profile ~/.profile
 ln -sf ~/dotfiles/zsh/.zshrc ~/.zshrc
-ln -sf ~/dotfiles/zsh/.p10k.zsh ~/.p10k.zsh
 mkdir -p ~/.config/nvim
 ln -sf ~/dotfiles/nvim/init.vim ~/.config/nvim/init.vim
 mkdir -p ~/.ssh
@@ -52,9 +49,7 @@ ln -sf ~/dotfiles/git/.gitconfig ~/.gitconfig
 ## 🔧 包含的配置
 
 ### Zsh
-- Oh My Zsh 框架
-- Powerlevel10k 主题
-- Git 插件
+- 轻量原生 Zsh 配置
 - NVM (Node Version Manager)
 - OpenClaw 自动补全
 - 自定义别名和函数
@@ -81,12 +76,6 @@ ln -sf ~/dotfiles/git/.gitconfig ~/.gitconfig
 # Ubuntu/Debian
 sudo apt update
 sudo apt install -y zsh git curl wget neovim
-
-# 安装 Oh My Zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-# 安装 Powerlevel10k
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
 # 安装 vim-plug (Neovim)
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
@@ -121,8 +110,7 @@ sudo update-alternatives --install /usr/bin/clangd clangd /usr/bin/clangd-15 100
 
 1. **SSH 密钥**：不包含私钥文件，需要手动复制 `~/.ssh/id_rsa`
 2. **Neovim 插件**：首次运行需要执行 `:PlugInstall`
-3. **Powerlevel10k**：首次运行需要执行 `p10k configure`
-4. **环境变量**：检查 `.profile` 中的路径设置
+3. **环境变量**：检查 `.profile` 中的路径设置
 
 ## 🤝 贡献
 
