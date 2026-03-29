@@ -19,3 +19,10 @@ Host github.com
     User git
     IdentityFile ~/.ssh/id_rsa
     AddKeysToAgent yes      
+
+Host ecs-k8s-n0
+    HostName 101.245.91.253
+    Port 5032
+    User ledy2025
+    IdentityFile ~/.ssh/id_ed25519_main
+    IdentitiesOnly yes
