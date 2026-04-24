@@ -25,3 +25,9 @@ fi
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
+export GOROOT="$HOME/.local/lib/go"
+export PATH="$GOROOT/bin:$PATH"
+
+if [ -f "$HOME/.proxy_env.sh" ]; then
+    . "$HOME/.proxy_env.sh"
+fi

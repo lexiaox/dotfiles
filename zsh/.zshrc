@@ -20,6 +20,25 @@ if [[ -f "$HOME/.openclaw/completions/openclaw.zsh" ]]; then
   source "$HOME/.openclaw/completions/openclaw.zsh"
 fi
 
-alias claw='tmux attach -t openclaw || (tmux new-session -d -s openclaw && tmux send-keys -t openclaw "export https_proxy=http://127.0.0.1:10808 && openclaw dashboard" C-m && tmux attach -t openclaw)'
+if [[ -f "$HOME/.proxy_env.sh" ]]; then
+  source "$HOME/.proxy_env.sh"
+fi
+
+alias claw='tmux attach -t openclaw || (tmux new-session -d -s openclaw && tmux send-keys -t openclaw "source ~/.proxy_env.sh >/dev/null 2>&1; openclaw dashboard" C-m && tmux attach -t openclaw)'
 
 [[ -f "$HOME/.p10k.zsh" ]] && source "$HOME/.p10k.zsh"
+
+_set_bar_cursor() {
+  [[ -t 1 ]] && printf '\e[5 q'
+}
+precmd_functions+=(_set_bar_cursor)
+zle -N zle-line-init _set_bar_cursor
+zle -N zle-keymap-select _set_bar_cursor
+
+# Codex local tool PATH
+if [[ -d "$HOME/.local/bin" ]]; then
+  export PATH="$HOME/.local/bin:$PATH"
+fi
+if [[ -d "$HOME/.local/lib/go/bin" ]]; then
+  export PATH="$HOME/.local/lib/go/bin:$PATH"
+fi

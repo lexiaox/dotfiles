@@ -1,2 +1,11 @@
 [credential]
 	helper = store
+[user]
+	email = ldy3087146292@gmail.com
+	name = ldy
+[init]
+	defaultBranch = main
+[alias]
+    graph = log --all --graph --decorate --oneline
+[core]
+	quotepath = false

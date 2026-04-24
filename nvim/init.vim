@@ -20,6 +20,7 @@ set smartcase           " 智能大小写 (输入大写时才敏感)
 set incsearch           " 增量搜索 (边输边高亮)
 set mouse=a             " 启用鼠标
 set clipboard=unnamedplus " 与系统剪贴板互通
+set showmode            " 显示当前模式，便于确认 paste 是否开启
 
 " 缩进设置 (C语言标准 4空格)
 set tabstop=4
@@ -59,6 +60,8 @@ let mapleader=" "       " 设置空格键为 Leader 键
 nmap Q <Nop>            " 禁用 Ex 模式
 nnoremap <C-s> :w<CR>   " Ctrl+s 保存
 nnoremap <leader>q :q<CR> " 空格+q 退出
+nnoremap <F2> :set paste!<CR> " F2 切换粘贴模式
+inoremap <F2> <C-o>:set paste!<CR> " 插入模式下也可切换粘贴模式
 
 " [文件树 NERDTree]
 map <C-n> :NERDTreeToggle<CR> " Ctrl+n 开关文件树

@@ -116,6 +116,8 @@
   typeset -g POWERLEVEL9K_MODE=compatible
   # Avoid extra glyph spacing because it can amplify alignment issues in terminals with partial icon support.
   typeset -g POWERLEVEL9K_ICON_PADDING=none
+  # Keep commands flush with prompt segments instead of leaving an extra cell before input.
+  typeset -g POWERLEVEL9K_{LEFT,RIGHT}_{LEFT,RIGHT}_WHITESPACE=
 
   # When set to true, icons appear before content on both sides of the prompt. When set
   # to false, icons go after content. If empty or not set, icons go before content in the left
@@ -361,7 +363,7 @@
   typeset -g POWERLEVEL9K_VCS_LOADING_BACKGROUND=8
 
   # Branch icon. Set this parameter to '\UE0A0 ' for the popular Powerline branch icon.
-  typeset -g POWERLEVEL9K_VCS_BRANCH_ICON='\uF126 '
+  typeset -g POWERLEVEL9K_VCS_BRANCH_ICON=
 
   # Untracked files icon. It's really a question mark, your font isn't broken.
   # Change the value of this parameter to show a different icon.
