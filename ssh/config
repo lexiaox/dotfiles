@@ -1,28 +1,10 @@
-Host asc-server
-    HostName 202.201.1.198
-    Port 28497
-    User root
-    IdentityFile ~/.ssh/id_rsa
-Host hpc1
-    HostName 202.201.1.198
-    Port 28238
-    User root
-    IdentityFile ~/.ssh/id_rsa
+Host LEGION-windows
+    HostName 172.20.161.207
+    User 30871
+    IdentityFile C:\Users\freedom\.ssh\id_ed25519
 
-Host hpc2
-    HostName 202.201.1.198
-    Port 28239
+Host aliyun
+    HostName 47.97.51.106
+    port 22
     User root
-    IdentityFile ~/.ssh/id_rsa
-Host github.com
-    HostName github.com
-    User git
-    IdentityFile ~/.ssh/id_rsa
-    AddKeysToAgent yes      
-
-Host huaweiyun
-    HostName 101.245.91.253
-    Port 5032
-    User ledy2025
-    IdentityFile ~/.ssh/id_ed25519_main
-    IdentitiesOnly yes
+    IdentityFile C:\Users\freedom\.ssh\id_ed25519_main
